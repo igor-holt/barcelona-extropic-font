@@ -1,0 +1,273 @@
+{
+  "name": "Barcelona-Extropic Design System",
+  "version": "1.0.0",
+  "description": "Typography and brand specifications for Barcelona-Extropic font system",
+  
+  "design_tokens": {
+    "typography": {
+      "font_family": "Barcelona Extropic",
+      "baseline": "Didone-Unbracketed",
+      "classification": "Modern serif with extreme contrast",
+      
+      "measurements": {
+        "stem_width": {
+          "value": "12px",
+          "ratio": "base unit",
+          "description": "Primary vertical stroke width"
+        },
+        "serif_width": {
+          "value": "1px",
+          "ratio": "1:12 (stem:serif)",
+          "description": "Thin crossbar and serif width"
+        },
+        "contrast_ratio": {
+          "value": 12.0,
+          "locked": true,
+          "description": "Mathematical invariant enforced by tests"
+        },
+        "grid_snap": {
+          "value": "4px",
+          "description": "All coordinates align to 4px grid"
+        }
+      },
+      
+      "spacing": {
+        "tracking_base": "0.25em",
+        "tracking_wide": "0.4em",
+        "tracking_kinetic": "0.4em"
+      },
+      
+      "weights": {
+        "display": 900,
+        "body": 700,
+        "subtitle": 300
+      },
+      
+      "variants": {
+        "default": {
+          "weight": 700,
+          "tracking": "0.25em",
+          "shear": "0deg"
+        },
+        "kinetic": {
+          "weight": 900,
+          "tracking": "0.4em",
+          "shear": "-12deg",
+          "transform": "skewX(-12deg)"
+        },
+        "display": {
+          "weight": 900,
+          "tracking": "0.25em",
+          "text_transform": "uppercase"
+        },
+        "subtitle": {
+          "weight": 300,
+          "tracking": "0.35em",
+          "text_transform": "uppercase",
+          "opacity": 0.65
+        }
+      }
+    },
+    
+    "colors": {
+      "ink": {
+        "primary": "#f0ede8",
+        "secondary": "rgba(240, 237, 232, 0.65)",
+        "description": "Foreground text colors"
+      },
+      "ground": {
+        "value": "#1a1e24",
+        "description": "Background color"
+      },
+      "grid": {
+        "value": "rgba(60, 120, 200, 0.12)",
+        "description": "Grid overlay in specimens"
+      },
+      "hairline": {
+        "value": "rgba(255, 255, 255, 0.15)",
+        "description": "Separator lines"
+      }
+    },
+    
+    "effects": {
+      "chirality": {
+        "horizontal": {
+          "transform": "scaleX(-1)",
+          "svg_matrix": "matrix(-1,0,0,1,2*cx,0)",
+          "description": "Left↔Right mirror (like ʞ from k)"
+        },
+        "vertical": {
+          "transform": "scaleY(-1)",
+          "svg_matrix": "matrix(1,0,0,-1,0,2*cy)",
+          "description": "Top↔Bottom mirror"
+        },
+        "rotation_180": {
+          "transform": "rotate(180deg)",
+          "svg_matrix": "matrix(-1,0,0,-1,2*cx,2*cy)",
+          "description": "Point symmetry"
+        }
+      },
+      
+      "morphing": {
+        "interpolation": "linear",
+        "property": "--be-morph-t",
+        "range": "0.0 to 1.0",
+        "description": "CSS custom property controls chiral blend"
+      }
+    }
+  },
+  
+  "specimen_sheets": {
+    "uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "lowercase": "abcdefghijklmnopqrstuvwxyz",
+    "numerals": "0123456789",
+    "punctuation": ".,;:!?\"'()-–—",
+    "chiral_pairs": "A↔A̲  B↔B̲  C↔C̲  O↔O̲",
+    
+    "display_samples": [
+      "BARCELONA EXTROPIC",
+      "DIDONE CONTRAST 12:1",
+      "SEISMIC BASELINE",
+      "KINETIC VARIANT"
+    ],
+    
+    "paragraph_sample": "The Barcelona-Extropic typeface represents a modern interpretation of the Didone classification, featuring an extreme 12:1 contrast ratio between vertical stems and horizontal serifs. Every glyph is rendered as SVG with cryptographic proof-of-render hashing."
+  },
+  
+  "component_library": {
+    "css_classes": {
+      ".be": {
+        "description": "Base class for Barcelona-Extropic typography",
+        "properties": {
+          "font-family": "var(--be-font)",
+          "font-weight": "var(--be-weight)",
+          "letter-spacing": "var(--be-tracking)",
+          "color": "var(--be-ink)"
+        }
+      },
+      
+      ".be-display": {
+        "description": "Hero/display headings",
+        "use_cases": ["Page titles", "Hero sections", "Major headings"],
+        "properties": {
+          "font-weight": "900",
+          "text-transform": "uppercase",
+          "line-height": "1.05"
+        }
+      },
+      
+      ".be-subtitle": {
+        "description": "Thin subtitle text",
+        "use_cases": ["Subheadings", "Captions", "Secondary text"],
+        "properties": {
+          "font-weight": "300",
+          "letter-spacing": "0.35em",
+          "color": "var(--be-ink-secondary)"
+        }
+      },
+      
+      ".be-kinetic": {
+        "description": "Kinetic/HFT mode with shear",
+        "use_cases": ["Dynamic content", "Real-time data", "Emphasis"],
+        "properties": {
+          "font-weight": "900",
+          "letter-spacing": "0.4em",
+          "transform": "skewX(-12deg)"
+        }
+      },
+      
+      ".be-chiral-h": {
+        "description": "Horizontal mirror",
+        "properties": {
+          "transform": "scaleX(-1)"
+        }
+      },
+      
+      ".be-grid-bg": {
+        "description": "Grid background matching specimen",
+        "properties": {
+          "background-color": "var(--be-ground)",
+          "background-image": "linear-gradient(...)"
+        }
+      }
+    }
+  },
+  
+  "integration_patterns": {
+    "web": {
+      "method": "<link> tag",
+      "file": "barcelona-extropic.css",
+      "features": ["@font-face WOFF2", "CSS custom properties", "Utility classes"]
+    },
+    
+    "google_workspace": {
+      "method": "Inline styles via Apps Script",
+      "file": "workspace.json",
+      "fallback": "Playfair Display from Google Fonts",
+      "limitations": ["No @font-face support", "No external CSS"]
+    },
+    
+    "ios_wkwebview": {
+      "method": "WKUserScript injection",
+      "file": "ios-inject.js",
+      "timing": "documentStart",
+      "features": ["Google Fonts fallback", "Full CSS support"]
+    },
+    
+    "electron": {
+      "method": "Standard <link> tag",
+      "file": "barcelona-extropic.css",
+      "features": ["Full WOFF2 support", "Local font fallback"]
+    }
+  },
+  
+  "usage_examples": {
+    "hero_section": {
+      "html": "<h1 class=\"be-display\">Barcelona Extropic</h1>\n<p class=\"be-subtitle\">Didone · 12:1 Contrast</p>",
+      "description": "Standard hero layout"
+    },
+    
+    "kinetic_emphasis": {
+      "html": "<span class=\"be-kinetic\">REAL-TIME</span>",
+      "description": "Dynamic/emphasized text with -12° shear"
+    },
+    
+    "chiral_variant": {
+      "html": "<span class=\"be be-chiral-h\">MIRROR</span>",
+      "description": "Horizontally flipped text"
+    },
+    
+    "custom_properties": {
+      "css": ".custom {\n  font-family: var(--be-font);\n  color: var(--be-ink);\n  letter-spacing: var(--be-tracking);\n}",
+      "description": "Building custom styles with design tokens"
+    }
+  },
+  
+  "quality_assurance": {
+    "test_coverage": "34 tests (100% pass required)",
+    "invariants": [
+      "Contrast ratio must be exactly 12.0",
+      "All coordinates snap to 4px grid",
+      "Proof-of-render hashes are deterministic",
+      "Free tier QoS budget enforced",
+      "Chirality transforms preserve glyph metrics"
+    ],
+    "verification": "cargo test --features ambigraph"
+  },
+  
+  "export_formats": {
+    "wasm": {
+      "file": "be_ambigraph_bg.wasm",
+      "size": "~15-25KB",
+      "compression": "wasm-opt"
+    },
+    "svg": {
+      "format": "Inline SVG with proof-of-render hash",
+      "validation": "SHA-256 over SVG + params"
+    },
+    "css": {
+      "delivery": "Cloudflare Workers edge",
+      "cache": "immutable, max-age=31536000"
+    }
+  }
+}
