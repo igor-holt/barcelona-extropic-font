@@ -1,0 +1,29 @@
+[package]
+name = "be_ambigraph"
+version = "1.0.0"
+authors = ["Igor Holt"]
+edition = "2021"
+description = "Barcelona-Extropic font system: WASM-based Didone typography with proof-of-render hashing"
+license = "MIT"
+repository = "https://github.com/igor-holt/barcelona-extropic-font"
+keywords = ["font", "typography", "wasm", "svg", "didone"]
+categories = ["wasm", "graphics", "rendering"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+path = "lib.rs"
+
+[dependencies]
+wasm-bindgen = "0.2"
+sha2 = "0.10"
+
+[features]
+default = []
+ambigraph = []
+
+[profile.release]
+opt-level = "z"     # Optimize for size
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Maximum optimization
+panic = "abort"     # Reduce binary size
+strip = true        # Strip symbols
