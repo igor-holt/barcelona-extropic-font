@@ -1,0 +1,20 @@
+# Barcelona Extropic Font — Typography System
+
+> Production-ready typography: Rust WASM font rendering + Cloudflare Workers edge delivery.
+> Didone-class typeface with 12:1 contrast, proof-of-render hashing.
+> Created by Igor Holt.
+
+## Features
+- Rust WASM font rendering
+- Cloudflare Workers edge delivery
+- Universal deployment (web, iOS, Google Workspace)
+- Proof-of-render cryptographic hashing
+
+## Technology
+- Part of Genesis Conductor infrastructure
+- Edge-first architecture
+- Thermodynamic verification compatible
+
+## Creator
+Igor Holt — AI Architect
+https://genesisconductor.io
