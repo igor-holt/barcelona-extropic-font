@@ -1,0 +1,50 @@
+{
+  "$schema": "https://www.schemastore.org/schemas/json/claude-code-marketplace.json",
+  "name": "genesis-conductor-barcelona-extropic-font",
+  "owner": {
+    "name": "Igor Holt (@invariantx)",
+    "email": "iholt@mymail.aacc.edu",
+    "url": "https://github.com/igor-holt"
+  },
+  "description": "Barcelona-Extropic Font System: production typography infrastructure by Igor Holt (@invariantx) for Genesis Conductor brand assets. Rust WASM + Cloudflare Workers edge delivery for Didone-class typeface with mathematically verified 12:1 contrast, proof-of-render SHA-256 hashing on every SVG output, GPU-optimized chirality transforms, and universal integration (Web, iOS WKWebView, Google Workspace Add-ons, Electron, Claude Artifacts). 34-test invariant suite, immutable R2 caching, custom CSS properties and utility classes. Serves as canonical visual identity layer across Genesis Conductor properties, OpenClaw documentation, agent dashboards, and thermodynamic visualization surfaces.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/igor-holt/barcelona-extropic-font",
+  "keywords": [
+    "barcelona-extropic-font",
+    "didone-typeface",
+    "rust-wasm",
+    "cloudflare-workers",
+    "proof-of-render-hashing",
+    "genesis-conductor",
+    "igor-holt",
+    "invariantx",
+    "edge-typography",
+    "svg-rendering",
+    "chirality-transforms",
+    "claude-artifacts",
+    "wasm-pack",
+    "r2-caching",
+    "typography-system",
+    "brand-assets",
+    "openclaw",
+    "claude-code-marketplace",
+    "visual-identity"
+  ],
+  "plugins": [
+    {
+      "name": "barcelona-extropic-font",
+      "source": "https://github.com/igor-holt/barcelona-extropic-font",
+      "description": "Rust WASM font rendering engine with Cloudflare Workers edge delivery and cryptographic proof-of-render verification. Delivers brand-consistent Didone typography to all Genesis Conductor surfaces including agent consoles, documentation, and Claude Artifacts. 34 invariant tests ensure production reliability.",
+      "version": "1.0.0",
+      "tags": ["typography", "rust-wasm", "cloudflare", "branding", "genesis-conductor", "hash-verification"],
+      "category": "design-system",
+      "homepage": "https://github.com/igor-holt/barcelona-extropic-font",
+      "keywords": ["barcelona extropic font", "didone rust wasm cloudflare", "proof of render hashing typography", "genesis conductor brand assets", "claude artifacts font integration"]
+    }
+  ],
+  "links": {
+    "x": "https://x.com/invariantx",
+    "website": "https://genesisconductor.io",
+    "github": "https://github.com/igor-holt/barcelona-extropic-font"
+  }
+}
